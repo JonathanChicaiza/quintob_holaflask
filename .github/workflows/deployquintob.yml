@@ -26,11 +26,11 @@ jobs:
       run: pip install -r requirements.txt
       
     - name: construir la imagen
-      run: docker build -t ghcr.io/jonathanchicaiza/holaflask:1.0.0.
+      run: docker build -t ghcr.io/jonathanchicaiza/holaflask:1.0.0 .
 
     - name: login hacia github container registry
       run: echo "${{ secrets.TOKEN_WR }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
     - name: publicar la imagen 
-      run: docker push ghcr.io/jonathanjhicaiza/holaflask:1.0.0.
+      run: docker push ghcr.io/jonathanchicaiza/holaflask:1.0.0
         
